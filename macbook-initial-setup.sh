@@ -1,64 +1,58 @@
 #!/bin/bash
 
-# Change login shell to zsh. This is default shell for MacOS Catalina and above, this is only for legacy systems
-# chsh -s /bin/zsh
-
-# install homebrew apps repositories manager
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# add repo with drivers to cask (needed for Steelseries Engine and Logitech Camera Settings)
-#brew tap homebrew/cask-drivers
-
-# List of non-AppStore apps
-nonAppStoreApps=(
-#Developer
-    postman # Most popular HTTP requests tool
-    visual-studio-code # Modern code editor with community-driven plugins
-    charles # Web debugging proxy
-    iterm2 # Alternative terminal
-    sketch # UI/UX design tool
-    sourcetree # GUI for git and gitflow
-    sherlock # App to edit iOS Views on the fly
-    isimulator # App to manage iOS Simulators
-#Video
-    iina # Best looking macOS video watching app
-    vlc # Most popular cross-platform video watching app
-#Subtitles
-    flixtools # Subtitles downloader
-#Developer
-    reveal # App to edit iOS Views on the fly
-#Other
-    spotify # Most popular music streaming service
-)
-
-# install non-AppStore apps
-brew cask install ${nonAppStoreApps[@]}
-
-# Install AppStore CLI installer
-brew install mas
-
-# list of AppStore apps
-appStoreApps=(
-#DaisyDisk
-    441258766 # Magnet (Organises apps views on a screen)
-#    497799835 # Xcode (Apple IDE)
-#    1333542190 # 1Password 7 (Password Manager)
-#    803453959 # Slack (Communicator)
-#    409201541 # Pages (Apple's documents editor)
-#    409203825 # Numbers (Apple's spreadsheets editor)
-#    409183694 # Keynote (Apple's presentations editor)
-    425424353 # The Unarchiver (Archives extractor)
-    1330801220 # quicktype (JSON to Code generator)
-)
-
-# Install AppStore apps
-mas install ${appStoreApps[@]}
+## install homebrew apps repositories manager
+#/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#
+## List of non-AppStore apps
+#nonAppStoreApps=(
+##Developer
+#    postman # Most popular HTTP requests tool
+#    visual-studio-code # Modern code editor with community-driven plugins
+#    charles # Web debugging proxy
+#    iterm2 # Alternative terminal
+#    sketch # UI/UX design tool
+#    sourcetree # GUI for git and gitflow
+#    sherlock # App to edit iOS Views on the fly
+#    isimulator # App to manage iOS Simulators
+##Video
+#    iina # Best looking macOS video watching app
+#    vlc # Most popular cross-platform video watching app
+##Subtitles
+#    flixtools # Subtitles downloader
+##Developer
+#    reveal # App to edit iOS Views on the fly
+##Other
+#    spotify # Most popular music streaming service
+#)
+#
+## install non-AppStore apps
+#brew cask install ${nonAppStoreApps[@]}
+#
+## Install AppStore CLI installer
+#brew install mas
+#
+## list of AppStore apps
+#appStoreApps=(
+##DaisyDisk
+#    441258766 # Magnet (Organises apps views on a screen)
+##    497799835 # Xcode (Apple IDE)
+##    1333542190 # 1Password 7 (Password Manager)
+##    803453959 # Slack (Communicator)
+##    409201541 # Pages (Apple's documents editor)
+##    409203825 # Numbers (Apple's spreadsheets editor)
+##    409183694 # Keynote (Apple's presentations editor)
+#    425424353 # The Unarchiver (Archives extractor)
+#    1330801220 # quicktype (JSON to Code generator)
+#)
+#
+## Install AppStore apps
+#mas install ${appStoreApps[@]}
+#
+##Install Oh-My-Zsh
+#sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #
 ## Install terminal colors for Bash (choose between light and dark theme)
 #echo -e "export CLICOLOR=1\n#light theme\nexport LSCOLORS=ExFxBxDxCxegedabagacad\n#dark theme\n#export LSCOLORS=GxFxCxDxBxegedabagaced" >> ~/.bash_profile
-#
-#Install Oh-My-Zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #
 ## Install terminal colors for zsh (light theme)
 ## Use this generator to translate BSD colors and Linux colors: https://geoff.greer.fm/lscolors/
@@ -72,8 +66,6 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ## Uncomment en_US.UTF-8 locale for console, making them undependable from macOS locale settings
 #sed -i -e 's/# export LANG=en_US.UTF-8/export LANG=en_US.UTF-8/g' ~/.zshrc
 #
-## Disable mouse acceleration with defaults. Crucial for gaming
-#defaults write .GlobalPreferences com.apple.mouse.scaling -1
 #
 ## Copy SF Mono font (available only in Xcode and Terminal.app) to the system
 #cp -R /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/. /Library/Fonts/
@@ -81,39 +73,41 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 ## Use bbedit as a git editor
 #git config --global core.editor "bbedit -w"
 #
-## Remove ALL icons (except Finder) from dock
-#echo "Removing all icons (except Finder) from the dock…"
-#defaults write com.apple.dock persistent-apps -array
+# Remove ALL icons (except Finder) from dock
+echo "Removing all icons (except Finder) from the dock…"
+defaults write com.apple.dock persistent-apps -array
+
+# List of dock icons
+dockIcons=(
+    /System/Applications/Mail.app
+    /Applications/Slack.app
+    /Applications/Safari.app
+    /Applications/Spotify.app
+    /Applications/Sourcetree.app
+    /Applications/Visual Studio Code.app
+    /Applications/Xcode-11.1.app
+    /Applications/Reminders.app
+    /Applications/Notes.app
+)
 #
-## List of dock icons
-#dockIcons=(
-#    /System/Applications/Utilities/Terminal.app
-#    /System/Applications/Mail.app
-#    /System/Applications/Messages.app
-#    /Applications/Slack.app
-#    /Applications/Safari.app
-#    /System/Applications/Music.app
-#    /Applications/Bear.app
-#    /Applications/Things3.app
-#    /Applications/Fantastical.app
-#    /Applications/Sourcetree.app
-#    /Applications/BBEdit.app
-#    "/Applications/Visual Studio Code.app"
-#    /Applications/Xcode.app
-#)
-#
-## Adding icons
-#for icon in "${dockIcons[@]}"
-#do
-#    echo "Adding $icon to the dock…"
-#    defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$icon</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-#done
-#
-#echo "Setting up dock size…"
-#defaults write com.apple.dock tilesize -int 40
-#
-#echo "Restarting dock…"
-#killall Dock
+# Adding icons
+for icon in "${dockIcons[@]}"
+do
+    echo "Adding $icon to the dock…"
+    defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$icon</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+done
+
+## Disable mouse acceleration with defaults. Crucial for gaming
+#defaults write .GlobalPreferences com.apple.mouse.scaling -1
+
+echo "Setting up dock size…"
+defaults write com.apple.dock tilesize -int 40
+
+echo "Deosn't show recently used apps in a Dock"
+defaults write com.apple.dock show-recents -bool FALSE
+
+echo "Restarting dock…"
+killall Dock
 #
 ## List of brew packages
 #brewPackages=(
