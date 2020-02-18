@@ -7,102 +7,32 @@
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # add repo with drivers to cask (needed for Steelseries Engine and Logitech Camera Settings)
-brew tap homebrew/cask-drivers
+#brew tap homebrew/cask-drivers
 
 # List of non-AppStore apps
 nonAppStoreApps=(
-#Browsers
-    opera # One of the top browsers with build in VPN
-    firefox # Most popular open source browser
-    google-chrome # Most popular browser
-    tor-browser # Browser preconfigured with TOR network
 #Developer
     postman # Most popular HTTP requests tool
     visual-studio-code # Modern code editor with community-driven plugins
-    tableplus # Modern SQL client
-    bbedit # Most stable macOS text editor that can handle huge files
     charles # Web debugging proxy
-    mactex # Full LateX installation with supporting apps, about 4GB!
     iterm2 # Alternative terminal
     sketch # UI/UX design tool
-    zeplin # UI/UX design viewer
-    typora # Markdown single pane editor
     sourcetree # GUI for git and gitflow
     sherlock # App to edit iOS Views on the fly
     isimulator # App to manage iOS Simulators
-    cyberduck # FTP client
-#SECURITY
-    protonvpn # VPN from ProtonMail
-    protonmail-bridge # Bridge for email clients to work with ProtonMail
-    authy # 2-factor authenticator
-#HDD
-    drivedx # SMART status and HDD health tool
-    AmorphousDiskMark # HDD benchmarking tool
-    balenaetcher # creating USB drives
-    sdformatter # SD card formatter recommended by SD Association
 #Video
     iina # Best looking macOS video watching app
     vlc # Most popular cross-platform video watching app
-    handbrake # Video Transcoder
-#Graphics
-    gimp # Graphics editor
-    paintbrush # Simple Microsoft Paint-like drawing tool #WARNING: It changes images DPI!
 #Subtitles
-    aegisub # Subtitles editor
     flixtools # Subtitles downloader
-#OTHER
-    transmission # Torrents client
-    skype # Communicator
-    keka # Rar extractor
-    libreoffice # Documents/spreadsheets/presentations editor
-    steelseries-engine # Steelseries mouse drivers
-    bettertouchtool # Custom gestures for touchpad and touchbar, and reverse scrolling setting separate for touchpad and mouse.
-    calibre # Mobi/epub e-book converter
-    virtualbox # Virtual Machine
-    virtualbox-extension-pack # Extensions for virtualbox such as display resolution and USB
-    logitech-camera-settings  #drivers for the webcamera
-    signal # End-to-end encrypted messenger
-#Audio 
-    kode54-cog # Music and audio player    
-    xld # Audio converter
-    musicbrainz-picard # Audio tags editor
-#Unused
-#Games: WARNING Most games are 32-bit and won't work on Catalina
-    # steam # Biggest gaming platform from Valve
-    # gog-galaxy # Gaming platform with huge retro library from CD-Projekt
-    # battle-net # Blizzard's gaming platform
-    # origin # EA's gaming platform
-    # epic-games # Epic's gaming platform
 #Developer
-    # pycharm-ce # Python IDE from JetBrains
-    # webstorm # JavaScript IDE from JetBrains
-    # intellij-idea-ce # Java IDE from JetBrains
-    # sublime-text # Cross-platform code editor with it's own high performance rendering engine
-    # macdown # Markdown 2 panes editor
-    # dotnet-sdk # Dotnet language support
-    # docker # App to make containers for environments 
-    # insomnia # Open source HTTP requests tool
-    # paw # MacOS native HTTP requests tool
-	# reveal # App to edit iOS Views on the fly
+    reveal # App to edit iOS Views on the fly
 #Other
-    # linein # App for redirecting macOS audio between sources
-    # spotify # Most popular music streaming service
-    # soundflower # App giving additional audio sources for audio manipulation
-    # anki # App for learning with flashcards
-    # zoomus # Video conference App
-    # xquartz # X11 windows server needed for wine
-    # wine-stable # App to open Windows .exe files
-   	# scroll-reverser # Reverse scrolling setting separate for touchpad and mouse. Use instead of bettertouchtool
-    # spotify # Music streaming service
-    # paragon-ntfs # Support for NTFS file system
-    # thunderbird # Open Source Email client
+    spotify # Most popular music streaming service
 )
 
 # install non-AppStore apps
 brew cask install ${nonAppStoreApps[@]}
-
-# Install Battle.net (additional step for battle-net cask)
-# open /usr/local/Caskroom/battle-net/latest/Battle.net-Setup.app
 
 # Install AppStore CLI installer
 brew install mas
@@ -110,34 +40,15 @@ brew install mas
 # list of AppStore apps
 appStoreApps=(
 #DaisyDisk
-    929507092 # PhotoScape X (Photo Editor)
-    593341977 # PDF Attributes (PDF metadata editor)
-    497799835 # Xcode (Apple IDE)
-    1333542190 # 1Password 7 (Password Manager)
-    1091189122 # Bear (Notes with markdown support)
-    904280696 # Things 3 (TODO app)
-    975937182 # Fantastical 3 (Calendar app)
-    1335413823 # Ka-Block! (Ads blocking Safari extension)
-    768053424 # Gapplin (Vector images viewer/converter)
-    803453959 # Slack (Communicator)
-    405399194 # Kindle (Mobi file format reader)
-    462054704 # Microsoft Word (Documents editor)
-    462058435 # Microsoft Excel (Spreadsheets editor)
-    462062816 # Microsoft PowerPoint (Presentations editor)
-    409201541 # Pages (Apple's documents editor)
-    409203825 # Numbers (Apple's spreadsheets editor)
-    409183694 # Keynote (Apple's presentations editor)
-    1120214373 # Battery Health 2 (Battery stats and health)
+    441258766 #Magnet (Organises apps views on a screen)
+#    497799835 # Xcode (Apple IDE)
+#    1333542190 # 1Password 7 (Password Manager)
+#    803453959 # Slack (Communicator)
+#    409201541 # Pages (Apple's documents editor)
+#    409203825 # Numbers (Apple's spreadsheets editor)
+#    409183694 # Keynote (Apple's presentations editor)
     425424353 # The Unarchiver (Archives extractor)
-    1007457278 # Realm Browser (Realm databases browser)
-    1278508951 # Trello (Project management tool)
-    688211836 # EasyRes (resolution changer for retina)
     1330801220 # quicktype (JSON to Code generator)
-    430798174 # HazeOver (App that dims unfocused windows)
-    425955336 # Skitch (App for marking pictures)
-#Unused
-    # 985367838 # Microsoft Outlook (Email client)
-    # 673660806 # Controllers Lite (Gamepads diagnostics app)
 )
 
 # Install AppStore apps
