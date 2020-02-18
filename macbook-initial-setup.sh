@@ -40,7 +40,7 @@ brew install mas
 # list of AppStore apps
 appStoreApps=(
 #DaisyDisk
-    441258766 #Magnet (Organises apps views on a screen)
+    441258766 # Magnet (Organises apps views on a screen)
 #    497799835 # Xcode (Apple IDE)
 #    1333542190 # 1Password 7 (Password Manager)
 #    803453959 # Slack (Communicator)
@@ -57,8 +57,8 @@ mas install ${appStoreApps[@]}
 ## Install terminal colors for Bash (choose between light and dark theme)
 #echo -e "export CLICOLOR=1\n#light theme\nexport LSCOLORS=ExFxBxDxCxegedabagacad\n#dark theme\n#export LSCOLORS=GxFxCxDxBxegedabagaced" >> ~/.bash_profile
 #
-##Install Oh-My-Zsh
-#sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#Install Oh-My-Zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #
 ## Install terminal colors for zsh (light theme)
 ## Use this generator to translate BSD colors and Linux colors: https://geoff.greer.fm/lscolors/
