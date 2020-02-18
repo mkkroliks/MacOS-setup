@@ -33,7 +33,6 @@
 #
 ## list of AppStore apps
 #appStoreApps=(
-##DaisyDisk
 #    441258766 # Magnet (Organises apps views on a screen)
 ##    497799835 # Xcode (Apple IDE)
 ##    1333542190 # 1Password 7 (Password Manager)
@@ -43,6 +42,7 @@
 ##    409183694 # Keynote (Apple's presentations editor)
 #    425424353 # The Unarchiver (Archives extractor)
 #    1330801220 # quicktype (JSON to Code generator)
+#    865500966 # Feedly (RSS Reader)
 #)
 #
 ## Install AppStore apps
@@ -81,13 +81,13 @@ defaults write com.apple.dock persistent-apps -array
 dockIcons=(
     /System/Applications/Mail.app
     /Applications/Slack.app
-    /Applications/Safari.app
     /Applications/Spotify.app
     /Applications/Sourcetree.app
-    /Applications/Visual Studio Code.app
+    /Applications/Visual\ Studio\ Code.app
     /Applications/Xcode-11.1.app
-    /Applications/Reminders.app
-    /Applications/Notes.app
+    /System/Applications/Reminders.app
+    /System/Applications/Notes.app
+    /Applications/Feedly.app
 )
 #
 # Adding icons
@@ -97,14 +97,14 @@ do
     defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>$icon</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
 done
 
-## Disable mouse acceleration with defaults. Crucial for gaming
-#defaults write .GlobalPreferences com.apple.mouse.scaling -1
-
 echo "Setting up dock size…"
-defaults write com.apple.dock tilesize -int 40
+defaults write com.apple.dock tilesize -int 45
 
 echo "Deosn't show recently used apps in a Dock"
 defaults write com.apple.dock show-recents -bool FALSE
+
+echo "Minimize app windows to app icons"
+defaults write com.apple.dock minimize-to-application -bool TRUE
 
 echo "Restarting dock…"
 killall Dock
