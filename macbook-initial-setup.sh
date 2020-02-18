@@ -84,6 +84,10 @@ defaults write com.apple.dock show-recents -bool FALSE
 echo "Minimize app windows to app icons"
 defaults write com.apple.dock minimize-to-application -bool TRUE
 
+echo "Sets bottom right hot corner which action in showing Desktop"
+defaults write com.apple.dock wvous-br-corner -int 4
+defaults write com.apple.dock wvous-br-modifier -int 0
+
 echo "Restarting dock…"
 killall Dock
 
