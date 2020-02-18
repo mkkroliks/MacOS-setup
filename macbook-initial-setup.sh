@@ -34,6 +34,7 @@ brew install mas
 # list of AppStore apps
 appStoreApps=(
     441258766 # Magnet (Organises apps views on a screen)
+    458887729 # Translate Tab (Google Translator wrapper app)
 #    497799835 # Xcode (Apple IDE)
 #    1333542190 # 1Password 7 (Password Manager)
 #    803453959 # Slack (Communicator)
